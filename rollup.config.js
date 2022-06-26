@@ -1,0 +1,40 @@
+import resolve from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
+import dts from 'rollup-plugin-dts';
+import typescript from '@rollup/plugin-typescript';
+import postcss from 'rollup-plugin-postcss';
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const packageJson = require('./package.json');
+
+export default [
+    {
+        input: 'src/index.ts',
+        output: [
+            {
+                file: packageJson.module,
+                format: 'esm',
+                sourcemap: true,
+            },
+            {
+                file: packageJson.main,
+                format: 'cjs',
+                sourcemap: true,
+            }
+        ],
+        plugins: [
+            resolve(),
+            commonjs(),
+            typescript({ tsconfig: './tsconfig.json' }),
+            postcss(),
+        ]
+    },
+    {
+        input: 'dist/esm/types/index.d.ts',
+        output: [{
+            file: 'dist/index.d.ts', 
+            format: 'esm',
+        }],
+        external: [/\.scss$/],   // ignore .scss file
+        plugins: [dts()],
+    }
+];

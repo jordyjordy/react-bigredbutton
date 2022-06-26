@@ -1,0 +1,64 @@
+.brb-wrapper {
+    border: 3px solid black;
+    border-radius: 100%;
+    display:flex;
+    align-items: stretch;
+    justify-content: stretch;
+    background: rgb(113,113,113);
+    background: linear-gradient(0deg, rgba(113,113,113,1) 0%, rgba(193,193,193,1) 100%);
+
+    .brb-wrapper-inner {
+        position: relative;
+        flex: 1;
+        display:flex;
+        align-items: stretch;
+        justify-content:  stretch;
+        flex-direction: column;
+        padding: 3px 4px 2px 4px;
+        margin-bottom: 8px;
+        border-radius: 100%;
+        background: rgb(255, 255, 255);
+        background: linear-gradient(0deg, rgba(193,193,193,1) 0%, rgb(255, 255, 255) 100%);
+    }
+
+    .brb-button {
+        max-width: unset;
+        flex: 1;
+        height:100%;
+        border-radius: 100%;
+        margin-top: -2px;
+        margin-bottom: 5px;
+        position: relative;
+        display:flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        background: rgba(142,13,13,1);
+        background: radial-gradient(circle, rgba(142,13,13,1) 10%, rgba(231,17,17,1) 100%);
+
+        .highlight {
+            margin-top: 2px;
+            flex: 0 0 70%;
+            width: 90%;
+            border-radius: 100%;
+            background: white;
+            background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+        }
+
+        &:hover:not(:active) {
+            -webkit-box-shadow: inset 5px 5px 15px 5px #FF4747; 
+            box-shadow: inset 5px 5px 15px 5px #f47373;;
+        }
+
+        &:active {
+            .highlight {
+                background:none;
+
+            }
+            background: rgb(184, 19, 19);
+            background-color: radial-gradient(circle, rgb(156, 27, 27) 30%, rgb(114, 17, 17) 100%);
+            -webkit-box-shadow: inset 5px 5px 15px 5px #9c1717; 
+            box-shadow: inset 5px 5px 15px 5px #e03b3b;;
+        }
+    }
+}
