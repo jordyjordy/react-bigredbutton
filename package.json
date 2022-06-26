@@ -1,6 +1,9 @@
 {
-    "name": "react-bigredbutton",
-    "version": "0.0.1",
+    "name": "@jordyjordy/react-bigredbutton",
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com/jordyjordy"
+    },
+    "version": "0.1.0",
     "description": "A big red button",
     "scripts": {
         "build": "tsc --build",
